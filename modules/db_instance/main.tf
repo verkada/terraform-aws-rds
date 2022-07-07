@@ -28,8 +28,8 @@ resource "aws_db_instance" "this" {
 
   identifier = var.identifier
 
-  engine            = var.engine
-  engine_version    = var.engine_version
+  engine            = local.engine
+  engine_version    = local.engine_version
   instance_class    = var.instance_class
   allocated_storage = var.allocated_storage
   storage_type      = var.storage_type
@@ -37,9 +37,9 @@ resource "aws_db_instance" "this" {
   kms_key_id        = var.kms_key_id
   license_model     = var.license_model
 
-  name                                = var.name
-  username                            = var.username
-  password                            = var.password
+  db_name                             = var.name
+  username                            = local.username
+  password                            = local.password
   port                                = var.port
   domain                              = var.domain
   domain_iam_role_name                = var.domain_iam_role_name
