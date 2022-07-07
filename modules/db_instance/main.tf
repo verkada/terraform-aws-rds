@@ -127,7 +127,7 @@ resource "aws_db_instance" "this_mssql" {
   kms_key_id        = var.kms_key_id
   license_model     = var.license_model
 
-  db_name                             = var.name
+  db_name                             = var.db_name
   username                            = local.username
   password                            = local.password
   port                                = var.port
